@@ -55,7 +55,7 @@ button.click()
 
 
 # Rest of your code...
-# button_pm_locator = (By.XPATH, '//*[@id="__nuxt"]/div/div/div[1]/aside/div/div/div[5]/a') #HC
+# button_pm_locator = (By.XPATH, '/html/body/div/div/div/div[1]/aside/div/div[1]/div[5]/a') #HC
 button_pm_locator = (By.XPATH, '/html/body/div/div/div/div[1]/aside/div/div/div[4]/a')#employee
 button_pm = WebDriverWait(driver, 5).until(
     EC.visibility_of_element_located(button_pm_locator)
@@ -64,7 +64,7 @@ time.sleep(3)
 button_pm.click()
 
 
-# button_cm_locator = (By.XPATH,'//*[@id="__nuxt"]/div/div/div[2]/main/div/div/div[2]/div[1]/span[3]')
+# button_cm_locator = (By.XPATH,'/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/span[3]')
 button_cm_locator = (By.XPATH,'/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/span[3]')
 button_cm = WebDriverWait(driver, 5).until(
     EC.visibility_of_element_located(button_cm_locator)
@@ -73,7 +73,7 @@ time.sleep(3)
 button_cm.click()
 
 
-# button_cp_locator = (By.XPATH, '//*[@id="__nuxt"]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/button')
+# button_cp_locator = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/button')
 button_cp_locator = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/button')
 button_cp = WebDriverWait(driver, 5).until(
     EC.visibility_of_element_located(button_cp_locator)

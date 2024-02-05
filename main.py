@@ -1,5 +1,5 @@
 from selenium import webdriver
-from helpers.helpers import perform_login
+from hands.helpers import perform_login
 from test_employee.claim_point import *
 import time
 
