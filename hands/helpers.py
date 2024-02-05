@@ -34,6 +34,7 @@ def perform_login(driver, email, password):
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable(button_locator))
     button.click()
 
+
 def scrollClick(driver, locate, timeout=5):
     element = WebDriverWait(driver, timeout).until(
         EC.visibility_of_element_located(locate)
@@ -66,3 +67,9 @@ def selectDropdown(driver, ddLocate, optionText):
     )
 
     ActionChains(driver).move_to_element(desired_option).click().perform()
+
+def inputNumber(driver):
+    reward_valDraft = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div/div[4]/div/div/div/div/div/input')
+    scrollClick(driver,reward_valDraft)
+    inputText(driver, reward_valDraft, "3")
+
