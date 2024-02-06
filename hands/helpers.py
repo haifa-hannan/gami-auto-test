@@ -46,6 +46,12 @@ def scrollClick(driver, locate, timeout=5):
     )
     element.click()
 
+def justClick(driver, locate):
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(locate)
+    )
+    element.click()
+
 def inputText(driver, locate, text):
     element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(locate)

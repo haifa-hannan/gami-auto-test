@@ -62,6 +62,12 @@ def perform_logout(driver):
     time.sleep(2)
     logot.click()
 
+    logotbtn = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div/div[2]/button[2]'))
+    )
+    time.sleep(2)
+    logotbtn.click()
+
 
 # if __name__ == '__main__':
 #     options = webdriver.ChromeOptions()
