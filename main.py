@@ -12,15 +12,23 @@ def main():
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options)
 
+    accounts = {'hc':{'email':'ijlal.saputra@yopmail.com','password':'password123'},
+                'employee':{'email':"haifahannan.rosea@yopmail.com", 'password':'password123'}}
+    
+    role = 'employee'
 
+    acc = accounts.get(role)
 
     try:
         driver.get("https://gamification.jesica.online/auth/login")
-        perform_login(driver,"haifahannan.rosea@mailinator.com", 'password123')
-        oneCycle(driver)
-        # claimPoint(driver)
-        # claimPointDraft(driver)
-        # perform_logout(driver)
+        if acc:
+            perform_login(driver, acc['email'], acc['password'])
+            if role == 'hc':
+                oneCycle(driver)
+            elif role == 'employee':
+                perform_logout(driver)
+        else:
+            None
 
     finally:
         time.sleep(3)

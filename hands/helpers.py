@@ -23,6 +23,12 @@ def perform_login(driver, email, password):
     time.sleep(3)
     password_input.send_keys(password)
 
+    visibility = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/form/div/div[2]/div[2]/div/div'))
+    )
+    visibility.click()
+    time.sleep(3)
+
     field_get_captcha = driver.find_element(By.XPATH, '//*[@id="__nuxt"]/div/div/div[2]/form/div/div[2]/div[3]/div[1]/span').text
     driver.find_element(By.ID, "captcha").send_keys(field_get_captcha)
 
