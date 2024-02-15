@@ -20,4 +20,7 @@ def oneCycle(driver):
 
     inputSearch = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div/div/input')
     inputText(driver, inputSearch, "sangku")
+
+    closeSearch = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div/div/svg[2]')
+    justClick(driver, closeSearch)
     time.sleep(3)

@@ -12,7 +12,7 @@ def perform_login(driver, email, password):
     )
     email_input.click()
     email_input.clear()
-    time.sleep(3)
+    time.sleep(1)
     email_input.send_keys(email)
 
     password_input = WebDriverWait(driver, 3).until(
@@ -20,14 +20,14 @@ def perform_login(driver, email, password):
     )
     password_input.click()
     password_input.clear()
-    time.sleep(3)
+    # time.sleep(1)
     password_input.send_keys(password)
 
     visibility = WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/form/div/div[2]/div[2]/div/div'))
     )
     visibility.click()
-    time.sleep(3)
+    # time.sleep(1)
 
     field_get_captcha = driver.find_element(By.XPATH, '//*[@id="__nuxt"]/div/div/div[2]/form/div/div[2]/div[3]/div[1]/span').text
     driver.find_element(By.ID, "captcha").send_keys(field_get_captcha)
@@ -40,6 +40,22 @@ def perform_login(driver, email, password):
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable(button_locator))
     button.click()
 
+def perform_logout(driver, locate):
+    disName = (By.XPATH, '/html/body/div/div/div/div[1]/aside/div/footer/div/div')
+    scrollClick(driver, disName)
+    time.sleep(3)
+
+    logot = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(locate)
+    )
+    time.sleep(2)
+    logot.click()
+
+    logotbtn = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div/div[2]/button[2]'))
+    )
+    time.sleep(2)
+    logotbtn.click()
 
 def scrollClick(driver, locate, timeout=5):
     element = WebDriverWait(driver, timeout).until(
@@ -65,6 +81,12 @@ def inputText(driver, locate, text):
     element.click()
     element.send_keys(text)
 
+def clearingText(driver, locate):
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(locate)
+    )
+    element.click()
+
 
 def selectDropdown(driver, ddLocate, optionText):
     dropdown_element = WebDriverWait(driver, 10).until(
@@ -84,4 +106,3 @@ def inputNumber(driver):
     reward_valDraft = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div/div[4]/div/div/div/div/div/input')
     scrollClick(driver,reward_valDraft)
     inputText(driver, reward_valDraft, "3")
-

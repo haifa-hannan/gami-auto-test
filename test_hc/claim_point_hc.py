@@ -3,15 +3,15 @@ from selenium.webdriver.common.by import By
 from hands.helpers import *
 
 
-def claimPoint(driver):
-    pointMaster = (By.XPATH, '/html/body/div/div/div/div[1]/aside/div/div/div[4]/a')
-    scrollClick(driver, pointMaster)
+def claimPointHC(driver):
+    pointMasterHC = (By.XPATH, '/html/body/div/div/div/div[1]/aside/div/div[1]/div[5]/a')
+    scrollClick(driver, pointMasterHC)
 
-    clickPoint = (By.XPATH,'/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/span[3]')
-    scrollClick(driver,clickPoint)
+    clickPointHC = (By.XPATH,'/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/span[3]')
+    scrollClick(driver,clickPointHC)
 
-    clickClaimPoint = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/button')
-    scrollClick(driver, clickClaimPoint)
+    clickClaimPointHC = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/button')
+    scrollClick(driver, clickClaimPointHC)
 
     dropdown_element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="__nuxt"]/div/div/div[2]/main/div/div/div[2]/div/div[1]/div/div/div[1]/input'))
@@ -52,14 +52,4 @@ def claimPoint(driver):
     scrollClick(driver,backDashboard)
 
 
-# if __name__ == '__main__':
-#     options = webdriver.ChromeOptions()
-#     options.add_experimental_option("detach", True)
-#     driver = webdriver.Chrome(options=options)
 
-#     try:
-#         driver.get("https://gamification.jesica.online/auth/login")
-#         perform_login(driver, "aa@mailinator.com", 'password123')
-#         claimPoint(driver)
-#     finally:
-#         time.sleep(1)
