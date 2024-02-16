@@ -26,11 +26,11 @@ def main():
         driver.get("https://gamification.jesica.online/auth/login")
         if acc:
             perform_login(driver, acc['email'], acc['password'])
-            time.sleep(5)
+            time.sleep(10)
             if role == 'hc'or role == 'test':
-                barGameplyLibrary(driver)
-                time.sleep(5)
-                GameplayLibraryFilter(driver)
+                # barGameplyLibrary(driver)
+                # time.sleep(3)
+                # GameplayLibraryFilter(driver)
                 time.sleep(3)
                 barGameplayMaster(driver)
                 # logota = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[2]/div/button[1]')
@@ -44,6 +44,7 @@ def main():
         else:
             None
     # except Exception as e:
+    #     print(e)
     #     if "selenium.common.exceptions" in str(e):
     #         # Kesalahan terkait Selenium
     #         print("Terjadi kesalahan dalam eksekusi Selenium:", e)
