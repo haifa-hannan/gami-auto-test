@@ -106,3 +106,45 @@ def inputNumber(driver):
     reward_valDraft = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div/div[4]/div/div/div/div/div/input')
     scrollClick(driver,reward_valDraft)
     inputText(driver, reward_valDraft, "3")
+
+
+
+def filterByTime(driver):
+    daily_click = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[1]/span[1]')
+    justClick(driver, daily_click)
+    time.sleep(1)
+
+    weekly_click = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[1]/span[2]')
+    justClick(driver, weekly_click)
+    time.sleep(1)
+
+    monthly_click = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[1]/span[3]')
+    justClick(driver, monthly_click)
+    time.sleep(1)
+
+    # filterHighLow = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[2]/button')
+    # justClick(driver, filterHighLow)
+
+    # lowest = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[2]/div/div[2]/input')
+    # justClick(driver, lowest)
+
+    # apply = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[2]/button[2]')
+    # justClick(driver, apply)
+
+    # filterHighLow2 = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[2]/button')
+    # justClick(driver, filterHighLow2)
+    # lowest2 = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[2]/div/div[2]/input')
+    # justClick(driver, lowest2)
+    # highest = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/input')
+    # justClick(driver, highest)
+    # apply2 = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[2]/button[2]')
+    # justClick(driver, apply2)
+
+    # searchbtn = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[2]/div')
+    # justClick(driver, searchbtn)
+
+    # inputSearch = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[2]/div/input')
+    # inputText(driver, inputSearch, "search")
+
+    # closeSearch = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[2]/div/svg[2]')
+    # justClick(driver, closeSearch)
