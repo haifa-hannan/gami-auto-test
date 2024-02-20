@@ -22,7 +22,7 @@ def barGameplayMaster(driver):
     click_title = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/div[1]/div/div')
     justClick(driver, click_title)
 
-    i=0
+    i=2
     # for _ in inputs_title:
     i+=1
     input_title = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/div[1]/div/div/input')
@@ -162,3 +162,6 @@ def barGameplayMaster(driver):
     submit_points = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/footer/button[4]')
     justClick(driver, submit_points)
     time.sleep(3)
+
+    btn = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div/div[2]/button')
+    justClick(driver, btn)

@@ -6,6 +6,7 @@ from test_employee.one_cycle import *
 from test_hc.gameplay_library import *
 from test_hc.gameplay_master import *
 from test_hc.leaderboard import *
+from test_hc.point_master import *
 from hands.helpers import *
 import time
 
@@ -30,11 +31,13 @@ def main():
             time.sleep(10)
             if role == 'hc'or role == 'test':
                 # barGameplyLibrary(driver)
-                # time.sleep(3)
+                time.sleep(1)
                 # GameplayLibraryFilter(driver)
-                time.sleep(3)
+                # time.sleep(1)
                 # barGameplayMaster(driver)
-                barLeaderBoardManagement(driver)
+                # barLeaderBoardManagement(driver)
+                # barLeaderBoardEmployee(driver)
+                barPointMaster(driver)
                 # logota = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div[2]/div/button[1]')
                 # perform_logout(driver, logota)
             elif role == 'employee' :

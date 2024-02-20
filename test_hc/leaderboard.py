@@ -28,3 +28,15 @@ def barLeaderBoardManagement(driver):
     justClick(driver, byAllEmployee)
 
     filterByTime(driver)
+
+
+def barLeaderBoardEmployee(driver):
+    click_employee = (By.XPATH, '/html/body/div/div/div/div[1]/aside/div/div[1]/div[4]/div/a[2]')
+    justClick(driver, click_employee)
+    time.sleep(5)
+
+    weekly = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[1]/div/span[2]')
+    justClick(driver, weekly)
+
+    monthly = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[1]/div/span[3]')
+    justClick(driver, monthly)
