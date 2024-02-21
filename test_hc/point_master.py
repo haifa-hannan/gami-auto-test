@@ -230,7 +230,38 @@ def barPointMaster(driver):
     ActionChains(driver).move_to_element(revoke).click().perform()
     time.sleep(1)
 
+# ======= input point: add new point =============
+
     add_new_point = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/a')
     justClick(driver, add_new_point)
 
-    
+    employee_name = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div/div/div/div/div[1]/input'))
+    )
+    employee_name.click()
+    employee_name.send_keys("first")
+    time.sleep(1)
+    name = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[1]/div[2]/div/div/div/div/div[2]/ul'))
+    )
+    ActionChains(driver).move_to_element(name).click().perform()
+
+    gameplay = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div/div[1]/div/div/div[1]/input'))
+    )
+    gameplay.click()
+    gameplay.send_keys("sele")
+    time.sleep(1)
+    search_gameplay = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div/div[1]/div/div/div[2]/ul'))
+    )
+    ActionChains(driver).move_to_element(search_gameplay).click().perform()
+
+    option_click = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div/div[4]/div/div/div/div/div[1]/input')
+    justClick(driver, option_click)
+
+    save_as_draft = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/footer/button[2]')
+    justClick(driver, save_as_draft)
+
+    just_click_ok = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div/div[2]/button')
+    justClick(driver, just_click_ok)
