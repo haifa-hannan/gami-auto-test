@@ -88,19 +88,17 @@ def clearingText(driver, locate):
     element.click()
 
 
-def selectDropdown(driver, ddLocate, optionText):
-    dropdown_element = WebDriverWait(driver, 10).until(
+def selectDropdown(driver, ddLocate, clickLocate):
+    element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(ddLocate)
     )
-    dropdown_element.click()
-    dropdown_element.send_keys(optionText)
-
-    desired_option_locator = (By.XPATH, f"//*[text()='{optionText}']")
+    element.click()
+    time.sleep(1)
     desired_option = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located(desired_option_locator)
+        EC.presence_of_element_located(clickLocate)
     )
-
     ActionChains(driver).move_to_element(desired_option).click().perform()
+    time.sleep(1)
 
 def inputNumber(driver):
     reward_valDraft = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div/div[4]/div/div/div/div/div/input')

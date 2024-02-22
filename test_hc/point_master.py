@@ -43,6 +43,13 @@ def barPointMaster(driver):
     ActionChains(driver).move_to_element(expired).click().perform()
     time.sleep(1)
 
+    # click_filter_status = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div')
+    # active = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[2]/ul/li[2]')
+    # expired = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[2]/ul/li[3]')
+    # selectDropdown(driver, click_filter_status,active)
+    # selectDropdown(driver, click_filter_status,expired)
+    
+
 # =============== point badges =================
 
     badges_history = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/span[2]')
@@ -77,49 +84,61 @@ def barPointMaster(driver):
     time.sleep(1)
     close_search_cm.click()
 
-    click_filter_status_draft = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
-    )
-    click_filter_status_draft.click()
-    time.sleep(1)
-    draft = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[2]'))
-    )
-    ActionChains(driver).move_to_element(draft).click().perform()
-    time.sleep(1)
+    # click_filter_status_draft = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
+    # )
+    # click_filter_status_draft.click()
+    # time.sleep(1)
+    # draft = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[2]'))
+    # )
+    # ActionChains(driver).move_to_element(draft).click().perform()
+    # time.sleep(1)
 
-    click_filter_status_waiting = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
-    )
-    click_filter_status_waiting.click()
-    time.sleep(1)
-    waiting = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[3]'))
-    )
-    ActionChains(driver).move_to_element(waiting).click().perform()
-    time.sleep(1)
+    # click_filter_status_waiting = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
+    # )
+    # click_filter_status_waiting.click()
+    # time.sleep(1)
+    # waiting = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[3]'))
+    # )
+    # ActionChains(driver).move_to_element(waiting).click().perform()
+    # time.sleep(1)
 
-    click_filter_status_approved = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
-    )
-    click_filter_status_approved.click()
-    time.sleep(1)
-    approved = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[4]'))
-    )
-    ActionChains(driver).move_to_element(approved).click().perform()
-    time.sleep(1)
+    # click_filter_status_approved = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
+    # )
+    # click_filter_status_approved.click()
+    # time.sleep(1)
+    # approved = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[4]'))
+    # )
+    # ActionChains(driver).move_to_element(approved).click().perform()
+    # time.sleep(1)
 
-    click_filter_status_rejected = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
-    )
-    click_filter_status_rejected.click()
-    time.sleep(1)
-    rejected = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[5]'))
-    )
-    ActionChains(driver).move_to_element(rejected).click().perform()
-    time.sleep(1)
+    # click_filter_status_rejected = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div'))
+    # )
+    # click_filter_status_rejected.click()
+    # time.sleep(1)
+    # rejected = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[5]'))
+    # )
+    # ActionChains(driver).move_to_element(rejected).click().perform()
+    # time.sleep(1)
+
+    click_filter_status_claim_points = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div')
+    draft = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[2]')
+    waiting = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[3]')
+    approved = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[4]')
+    rejected = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div/div[2]/ul/li[5]')
+    selectDropdown(driver, click_filter_status_claim_points,draft)
+    selectDropdown(driver, click_filter_status_claim_points,waiting)
+    selectDropdown(driver, click_filter_status_claim_points,approved)
+    selectDropdown(driver, click_filter_status_claim_points,rejected)
+
+# ======== point approval =============
 
     point_approval = (By.XPATH, '/html/body/div/div/div/div[2]/main/div/div/div[2]/div[1]/span[4]')
     justClick(driver, point_approval)
